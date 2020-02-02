@@ -1,5 +1,8 @@
+import sys
+
 from PySide2.QtCore import Slot, qApp 
 from PySide2.QtGui import QKeySequence
+from PySide2.QtWidgets import QApplication
 from PySide2.QtWidgets import QMainWindow, QAction
 
 class MainWindow(QMainWindow):
@@ -25,3 +28,13 @@ class MainWindow(QMainWindow):
         # Window dimensions
         geometry = qApp.desktop().availableGeometry(self)
         self.setFixedSize(geometry.width() * 0.8, geometry.height() * 0.7)
+
+if __name__=="__main__":
+    
+    # Qt Application
+    app = QApplication([])
+
+    window = MainWindow()
+    window.show()
+
+    sys.exit(app.exec_())
